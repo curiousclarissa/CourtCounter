@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    int scoreTeamA = 0;
-    int scoreTeamB = 0;
+    int scoreTeamA = 10;
+    int scoreTeamB = 10;
 
 
     @Override
@@ -18,16 +18,27 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Add 3 for Team A
      */
-    public void addThreeForTeamA(View v) {
-        scoreTeamA = scoreTeamA + 3;
-        displayForTeamA(scoreTeamA);
+    public void catchByTeamA(View v) {
+        scoreTeamB = scoreTeamB - 1;
+        displayForTeamB(scoreTeamB);
+        if (scoreTeamA <= 9)
+        {
+            scoreTeamA = scoreTeamA + 1;
+            displayForTeamA(scoreTeamA);
+        }
     }
     /**
      * Add 3 for Team B
      */
-    public void addThreeForTeamB(View v) {
-        scoreTeamB = scoreTeamB + 3;
-        displayForTeamB(scoreTeamB);
+    public void catchByTeamB(View v) {
+
+        scoreTeamA = scoreTeamA - 1;
+        displayForTeamA(scoreTeamA);
+        if (scoreTeamB <= 9)
+        {
+            scoreTeamB = scoreTeamB + 1;
+            displayForTeamB(scoreTeamB);
+        }
     }
     /**
      * Add 2 for Team A
@@ -46,21 +57,21 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Add 1 for Team A
      */
-    public void addOneForTeamA(View v) {
-        scoreTeamA = scoreTeamA + 1;
+    public void hitTeamA(View v) {
+        scoreTeamA = scoreTeamA - 1;
         displayForTeamA(scoreTeamA);
     }
     /**
      * Add 1 for Team B
      */
-    public void addOneForTeamB(View v) {
-        scoreTeamB = scoreTeamB + 1;
+    public void hitTeamB(View v) {
+        scoreTeamB = scoreTeamB - 1;
         displayForTeamB(scoreTeamB);
     }
 
     public void resetScore(View v) {
-        scoreTeamA = 0;
-        scoreTeamB = 0;
+        scoreTeamA = 10;
+        scoreTeamB = 10;
         displayForTeamA(scoreTeamA);
         displayForTeamB(scoreTeamB);
     }
