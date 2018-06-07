@@ -8,13 +8,10 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     int scoreTeamA = 10;
     int scoreTeamB = 10;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);    }
-
     /**
      * Add 3 for Team A
      */
@@ -31,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
      * Add 3 for Team B
      */
     public void catchByTeamB(View v) {
-
         scoreTeamA = scoreTeamA - 1;
         displayForTeamA(scoreTeamA);
         if (scoreTeamB <= 9)
